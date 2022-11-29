@@ -1,12 +1,35 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { ItemComponent } from './item/item.component';
+import { ItemsListComponent } from './items-list/items-list.component';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    children: [
+      {
+        path: '',
+        component: ItemsListComponent
+      },
+      {
+        path: ':id',
+        component: ItemComponent
+      },
+      {
+        path: '**',
+        redirectTo: '/providers'
+      }
+    ]
+  }
+]
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class ItemsRoutingModule { }
