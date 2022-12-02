@@ -1,1 +1,8 @@
-<p>providers-list works!</p>
+<h2>Providers</h2>
+<hr>
+
+<ul>
+    <li *ngFor="let provider of providers">
+        {{provider.id}} - {{provider.name}}
+    </li>
+</ul>
