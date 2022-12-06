@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { Provider } from '../interfaces/provider.interface';
+import { ProviderService } from '../services/provider.service';
 
 @Component({
   selector: 'app-provider',
@@ -8,9 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProviderComponent implements OnInit {
 
-  constructor() { }
+  provider!: Provider;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private providerService: ProviderService,
+              private router: Router) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params
+      .pipe(
+        switchMap(({id}) => this.providerService.getProviderById(id))
+      )
+      .subscribe(provider => {
+        this.provider = provider
+      })
   }
 
+  volver() {
+    this.router.navigate(['/providers'])
+  }
 }

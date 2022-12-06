@@ -17,4 +17,8 @@ export class ProviderService {
     return this.http.get<Provider[]>(`${this.baseUrl}/providers`);
   }
 
+  getProviderById(id: number): Observable<Provider> {
+    return this.http.get<Provider>(`${this.baseUrl}/providers/${id}`);
+  }
+
 }

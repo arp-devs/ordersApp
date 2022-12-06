@@ -1,1 +1,22 @@
-<p>provider works!</p>
+<h2>Provider</h2>
+<hr>
+
+<div class="container animate__animated animate__fadeIn">
+    <div class="row">
+        <div class="col">
+            {{provider.id}} - {{provider.name}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Date in: {{provider.date}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-outline-secondary btn-sm float-end" (click)="volver()">Volver</button>
+        </div>
+    </div>
+</div>
