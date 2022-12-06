@@ -6,6 +6,11 @@ import { ProviderService } from '../services/provider.service';
   selector: 'app-providers-list',
   templateUrl: './providers-list.component.html',
   styles: [
+    `
+      td {
+        cursor:pointer;
+      }
+    `
   ]
 })
 export class ProvidersListComponent implements OnInit {

@@ -1,8 +1,21 @@
 <h2>Providers</h2>
 <hr>
 
-<ul>
-    <li *ngFor="let provider of providers">
-        {{provider.id}} - {{provider.name}}
-    </li>
-</ul>
+<table class="table table-hover animate__animated animate__fadeIn">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date In</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provider of providers; let i = index;">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{provider.id}}</td>
+        <td>{{provider.name}}</td>
+        <td>{{provider.date}}</td>
+      </tr>
+    </tbody>
+  </table>
