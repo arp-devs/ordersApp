@@ -1,1 +1,28 @@
-<p>item works!</p>
+<h2>Item</h2>
+<hr>
+
+<div class="container animate__animated animate__fadeIn">
+    <div class="row">
+        <div class="col">
+            {{item.id}} - {{item.name}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Date in: {{item.date}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Price: {{item.price}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-outline-secondary btn-sm float-end" (click)="volver()">Volver</button>
+        </div>
+    </div>
+</div>
